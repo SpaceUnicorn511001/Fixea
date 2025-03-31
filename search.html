@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar profesionales | Fixea</title>
+  <meta name="description" content="Encuentra profesionales locales para tu proyecto. Compara precios, calificaciones y reseñas.">
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles-v2.css">
+  <link rel="stylesheet" href="css/search.css">
+  <!-- Google Fonts - Equivalente a Geist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .logo-image {
+      height: 43px;
+      width: auto;
+    }
+  </style>
+
+    <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qui99kah12");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CM8E4SN68P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CM8E4SN68P');
+</script>
+
+</head>
+
+<body class="antialiased">
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="/" class="logo">
+            <img src="images/logo/fixea-logo.svg" alt="Fixea" class="logo-image">
+          </a>
+          <div class="header-nav desktop-only">
+            <a href="/trabaja-con-nosotros" class="header-link">Únete como profesional</a>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropdown-button">
+              Explorar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Servicios Populares para el Hogar</a>
+              <a href="#">Limpieza y Organización</a>
+              <a href="#">Mantenimiento y Reparación</a>
+              <a href="#">Control de Plagas</a>
+              <a href="#">Adiciones e Instalaciones</a>
+              <a href="#">Remodelación</a>
+              <a href="#">Otros Servicios Populares</a>
+              <a href="#">Guías y Recursos</a>
+            </div>
+          </div>
+          <div class="desktop-only">
+            <a href="/login" class="header-link">Iniciar sesión</a>
+          </div>
+          <a href="/register" class="button primary">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-hero">
+      <div class="container">
+        <h1 class="search-title">Encuentra profesionales para tu proyecto</h1>
+        <div class="search-container">
+          <form class="search-form">
+            <input type="text" placeholder="¿Qué servicio necesitas?" class="search-input" value="">
+            <button type="submit" class="search-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-filters">
+      <div class="container">
+        <!-- Botón para mostrar/ocultar filtros en móvil -->
+        <button class="filters-toggle button primary" id="filters-toggle" aria-expanded="false">
+          Filtrar resultados
+        </button>
+
+        <!-- Contenedor de filtros que se mostrará/ocultará -->
+        <div class="filters-content" id="filters-content">
+          <div class="filters-container">
+           <!-- Filtro de Servicio -->
+              <div class="filter-group">
+                <label for="service">Servicio</label>
+                <select id="service" class="filter-select">
+                  <option value="all" selected>Todos los servicios</option>
+                  <option value="fontaneria">Fontanería</option>
+                  <option value="limpieza">Limpieza del hogar</option>
+                  <option value="manitas">Manitas</option>
+                  <option value="electricidad">Asistencia eléctrica</option>
+                  <option value="cesped">Corte de césped</option>
+                  <option value="renovacion">Renovación del hogar</option>
+                  <option value="pintura">Pintura de interiores</option>
+                  <option value="bano">Remodelación de baño</option>
+                </select>
+              </div>
+
+              <!-- Filtro de Ubicación -->
+              <div class="filter-group">
+                <label for="location">Ubicación</label>
+                <select id="location" class="filter-select">
+                  <option value="all" selected>Todas las ubicaciones</option>
+                  <option value="madrid">Madrid</option>
+                  <option value="barcelona">Barcelona</option>
+                  <option value="valencia">Valencia</option>
+                  <option value="sevilla">Sevilla</option>
+                </select>
+              </div>
+
+              <!-- Filtro de Calificación -->
+              <div class="filter-group">
+                <label for="rating">Calificación</label>
+                <select id="rating" class="filter-select">
+                  <option value="all" selected>Todas las calificaciones</option>
+                  <option value="5">5 estrellas</option>
+                  <option value="4">4+ estrellas</option>
+                  <option value="3">3+ estrellas</option>
+                </select>
+              </div>
+
+              <!-- Filtro de Precio -->
+              <div class="filter-group">
+                <label for="price">Precio</label>
+                <select id="price" class="filter-select">
+                  <option value="all" selected>Todos los precios</option>
+                  <option value="low">€</option>
+                  <option value="medium">€€</option>
+                  <option value="high">€€€</option>
+                  <option value="very-high">€€€€</option>
+                </select>
+              </div>
+
+              <!-- Filtro de Disponibilidad -->
+              <div class="filter-group">
+                <label for="availability">Disponibilidad</label>
+                <select id="availability" class="filter-select">
+                  <option value="all" selected>Cualquier día</option>
+                  <option value="today">Hoy</option>
+                  <option value="week">Esta semana</option>
+                  <option value="weekend">Este fin de semana</option>
+                </select>
+              </div>
+            <!-- Botón para resetear filtros -->
+            <div class="filter-group reset-filter-container">
+              <label>&nbsp;</label>
+              <button id="reset-filters" class="button primary">Limpiar filtros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-results">
+      <div class="container">
+        <div class="results-header">
+          <h2 class="results-title">Todos los servicios</h2>
+          <p class="results-count">Mostrando 8 profesionales</p>
+        </div>
+
+        <div class="pro-grid">
+          <!-- Professional Card 1 -->
+          <div class="pro-card"
+               data-location="madrid"
+               data-rating="5"
+               data-price="medium"
+               data-availability="week"
+               data-services="fontaneria,reparaciones,instalaciones,emergencias">
+            <div class="pro-header">
+              <img src="images/professionals/plumber1.jpg" alt="Fontanero profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Manuel García</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-count">32 reseñas</span>
+                </div>
+                <p class="pro-location">Madrid Centro</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Fontanero profesional con más de 15 años de experiencia. Especializado en reparaciones urgentes e instalaciones de baños y cocinas.</p>
+              <div class="pro-services">
+                <span class="service-tag">Reparaciones</span>
+                <span class="service-tag">Instalaciones</span>
+                <span class="service-tag">Emergencias 24h</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€ · Precio medio</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Manuel%20García*%2C%20de%20servicio%20de%20*fontanería*%20para%20*esta%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 2 -->
+          <div class="pro-card"
+               data-location="madrid"
+               data-rating="5"
+               data-price="medium"
+               data-availability="week"
+               data-services="fontaneria,renovacion,bano,pintura">
+            <div class="pro-header">
+              <img src="images/professionals/plumber2.jpg" alt="Fontanera profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Carolina Rodríguez</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-count">47 reseñas</span>
+                </div>
+                <p class="pro-location">Chamartín, Madrid</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Fontanera certificada especializada en soluciones sostenibles. Trabajos de alta calidad con garantía de satisfacción.</p>
+              <div class="pro-services">
+                <span class="service-tag">Eco-friendly</span>
+                <span class="service-tag">Reformas</span>
+                <span class="service-tag">Presupuesto gratis</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€ · Precio medio</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Carolina%20Rodríguez*%2C%20de%20servicio%20de%20*fontanería*%20para%20*esta%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 3 -->
+          <div class="pro-card"
+               data-location="madrid"
+               data-rating="4"
+               data-price="low"
+               data-availability="today"
+               data-services="fontaneria,manitas,reparaciones">
+            <div class="pro-header">
+              <img src="images/professionals/handyman1.jpg" alt="Fontanero y manitas" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Alejandro Martín</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★☆</div>
+                  <span class="rating-count">18 reseñas</span>
+                </div>
+                <p class="pro-location">Alcobendas, Madrid</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Fontanero y manitas con experiencia en todo tipo de reparaciones. Servicio rápido y asequible para emergencias y trabajos planificados.</p>
+              <div class="pro-services">
+                <span class="service-tag">Multiservicio</span>
+                <span class="service-tag">Económico</span>
+                <span class="service-tag">Rápido</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€ · Precio económico</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Alejandro%20Martín*%2C%20de%20servicio%20de%20*fontanería*%20para%20*hoy*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 4 -->
+          <div class="pro-card"
+               data-location="madrid"
+               data-rating="5"
+               data-price="high"
+               data-availability="weekend"
+               data-services="fontaneria,electricidad,certificaciones">
+            <div class="pro-header">
+              <img src="images/professionals/electrician1.jpg" alt="Fontanero y electricista" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Javier López</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-count">64 reseñas</span>
+                </div>
+                <p class="pro-location">Leganés, Madrid</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Profesional especializado en fontanería y electricidad. Servicio integral con más de 20 años en el sector y certificaciones oficiales.</p>
+              <div class="pro-services">
+                <span class="service-tag">Fontanería</span>
+                <span class="service-tag">Electricidad</span>
+                <span class="service-tag">Certificado</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€€ · Precio premium</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Javier%20López*%2C%20de%20servicio%20de%20*fontanería*%20para%20*este%20fin%20de%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 5 (visible solo con ciertos filtros) -->
+          <div class="pro-card"
+               data-location="barcelona"
+               data-rating="5"
+               data-price="medium"
+               data-availability="week"
+               data-services="fontaneria,reparaciones,bano">
+            <div class="pro-header">
+              <img src="images/professionals/plumber1.jpg" alt="Fontanero profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Pablo Martínez</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-count">28 reseñas</span>
+                </div>
+                <p class="pro-location">Eixample, Barcelona</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Especialista en instalaciones y reparaciones de fontanería. Trabajos garantizados y servicio de primera calidad en Barcelona.</p>
+              <div class="pro-services">
+                <span class="service-tag">Instalaciones</span>
+                <span class="service-tag">Baños</span>
+                <span class="service-tag">Cocinas</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€ · Precio medio</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Pablo%20Martínez*%2C%20de%20servicio%20de%20*fontanería*%20para%20*esta%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 6 (visible solo con ciertos filtros) -->
+          <div class="pro-card"
+               data-location="valencia"
+               data-rating="4"
+               data-price="low"
+               data-availability="today"
+               data-services="manitas,electricidad,renovacion">
+            <div class="pro-header">
+              <img src="images/professionals/handyman1.jpg" alt="Manitas profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Roberto Sánchez</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★☆</div>
+                  <span class="rating-count">15 reseñas</span>
+                </div>
+                <p class="pro-location">Centro, Valencia</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Manitas multiservicios especializado en pequeñas reparaciones, instalaciones eléctricas y trabajos de renovación. Disponibilidad inmediata.</p>
+              <div class="pro-services">
+                <span class="service-tag">Manitas</span>
+                <span class="service-tag">Electricidad</span>
+                <span class="service-tag">Renovación</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€ · Precio económico</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Roberto%20Sánchez*%2C%20de%20servicio%20de%20*manitas*%20para%20*hoy*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 7 (visible solo con ciertos filtros) -->
+          <div class="pro-card"
+               data-location="barcelona"
+               data-rating="5"
+               data-price="high"
+               data-availability="weekend"
+               data-services="limpieza,organizacion">
+            <div class="pro-header">
+              <img src="images/professionals/plumber2.jpg" alt="Experta en limpieza" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Carmen Torres</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-count">53 reseñas</span>
+                </div>
+                <p class="pro-location">Gràcia, Barcelona</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Servicio premium de limpieza y organización para hogares y oficinas. Utilizamos productos ecológicos y técnicas avanzadas de limpieza.</p>
+              <div class="pro-services">
+                <span class="service-tag">Limpieza profunda</span>
+                <span class="service-tag">Organización</span>
+                <span class="service-tag">Ecológico</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€€ · Precio premium</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Carmen%20Torres*%2C%20de%20servicio%20de%20*limpieza*%20para%20*este%20fin%20de%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+
+          <!-- Professional Card 8 (visible solo con ciertos filtros) -->
+          <div class="pro-card"
+               data-location="sevilla"
+               data-rating="4"
+               data-price="medium"
+               data-availability="week"
+               data-services="cesped,jardines,exterior">
+            <div class="pro-header">
+              <img src="images/professionals/handyman1.jpg" alt="Jardinero profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Antonio Reyes</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★☆</div>
+                  <span class="rating-count">31 reseñas</span>
+                </div>
+                <p class="pro-location">Triana, Sevilla</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Jardinero con amplia experiencia en mantenimiento y diseño de jardines. Especialista en corte de césped, poda y cuidado de plantas ornamentales.</p>
+              <div class="pro-services">
+                <span class="service-tag">Corte de césped</span>
+                <span class="service-tag">Jardines</span>
+                <span class="service-tag">Poda</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€ · Precio medio</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Antonio%20Reyes*%2C%20de%20servicio%20de%20*corte%20de%20césped*%20para%20*esta%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>
+          
+          <!-- Professional Card 9 (visible solo con ciertos filtros) -->
+          <div class="pro-card"
+               data-location="sevilla"
+               data-rating="4"
+               data-price="medium"
+               data-availability="week"
+               data-services="cesped,jardines,exterior">
+            <div class="pro-header">
+              <img src="images/professionals/handyman1.jpg" alt="Jardinero profesional" class="pro-image">
+              <div class="pro-details">
+                <h3 class="pro-name">Antonio Reyes</h3>
+                <div class="pro-rating">
+                  <div class="stars">★★★★☆</div>
+                  <span class="rating-count">31 reseñas</span>
+                </div>
+                <p class="pro-location">Triana, Sevilla</p>
+              </div>
+            </div>
+            <div class="pro-info">
+              <p class="pro-description">Jardinero con amplia experiencia en mantenimiento y diseño de jardines. Especialista en corte de césped, poda y cuidado de plantas ornamentales.</p>
+              <div class="pro-services">
+                <span class="service-tag">Corte de césped</span>
+                <span class="service-tag">Jardines</span>
+                <span class="service-tag">Poda</span>
+              </div>
+            </div>
+            <div class="pro-footer">
+              <div class="pro-price">€€ · Precio medio</div>
+              <a href="https://wa.me/51915296882?text=Quiero%20contactar%20con%20*Antonio%20Reyes*%2C%20de%20servicio%20de%20*corte%20de%20césped*%20para%20*esta%20semana*" target="_blank" class="button primary">Contactar</a>
+            </div>
+          </div>          
+
+          <!-- Encima de esto se agregan los perfiles, despues no. Cada perfil termina en doble </div> -->
+          
+        </div>
+
+        <div class="pagination">
+          <span class="page-current">1</span>
+          <a href="#" class="page-link">2</a>
+          <a href="#" class="page-link">3</a>
+          <span class="page-separator">...</span>
+          <a href="#" class="page-link">8</a>
+          <a href="#" class="page-next">
+            Siguiente
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Fixea</h3>
+          <ul class="footer-links">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contáctanos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Para clientes</h3>
+          <ul class="footer-links">
+            <li><a href="#">Cómo funciona</a></li>
+            <li><a href="#">Seguridad</a></li>
+            <li><a href="#">Reseñas</a></li>
+            <li><a href="#">Cerca de mí</a></li>
+            <li><a href="#">Centro de recursos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Para profesionales</h3>
+          <ul class="footer-links">
+            <li><a href="#">Cómo funciona</a></li>
+            <li><a href="#">Recursos para profesionales</a></li>
+            <li><a href="#">Historias de éxito</a></li>
+            <li><a href="#">App para profesionales</a></li>
+            <li><a href="#">Herramientas para profesionales</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Política de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+        <div class="copyright">
+          © 2025 Fixea, Inc.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+
+  <!-- Script inline para asegurar que la funcionalidad de filtros colapsables funcione -->
+  <script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('filters-toggle');
+      const filtersContent = document.getElementById('filters-content');
+
+      if (toggleBtn && filtersContent) {
+        // Asegurar que los filtros estén ocultos en móvil al inicio
+        if (window.innerWidth < 640) {
+          filtersContent.style.display = 'none';
+        }
+
+        // Configurar evento de clic
+        toggleBtn.addEventListener('click', function() {
+          // Alternar visibilidad
+          if (filtersContent.style.display === 'none') {
+            filtersContent.style.display = 'grid';
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.textContent = 'Ocultar filtros';
+          } else {
+            filtersContent.style.display = 'none';
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.textContent = 'Filtrar resultados';
+          }
+        });
+
+        console.log("Script inline de filtros inicializado correctamente");
+      }
+    });
+  </script>
+</body>
+</html>

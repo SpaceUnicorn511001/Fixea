@@ -1,0 +1,386 @@
+/* Search Page Styles */
+
+/* Search Hero Section */
+.search-hero {
+  background-color: #f3f4f6;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.search-container {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.search-hero .search-form {
+  display: flex;
+  position: relative;
+}
+
+.search-hero .search-input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-hero .search-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2c5499;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Filters Section */
+.search-filters {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  background-color: white; /* Cambiado de transparent a white para evitar transparencia */
+  position: sticky;
+  top: 61px; /* Height of the header */
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Restauramos la sombra para mejor separación visual */
+}
+
+.filters-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background-color: white; /* Aseguramos que el contenedor de filtros también tiene fondo blanco */
+}
+
+/* Botón para mostrar/ocultar filtros en móvil */
+.filters-toggle {
+  display: none; /* Oculto por defecto - visible solo en móvil */
+  max-width: 250px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+/* Media queries para responsive */
+@media (min-width: 640px) {
+  .filters-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .filters-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filters-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Estilo para filtros colapsables en móvil */
+@media (max-width: 639px) {
+  .filters-toggle {
+    display: block;
+  }
+
+  /* Simplificado para mayor compatibilidad */
+  .filter-group {
+    margin-bottom: 0.5rem;
+  }
+
+  .filter-group label {
+    font-size: 0.7rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .filter-select {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  /* Dar más espacio al contenedor de filtros en móvil */
+  .filters-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.filter-select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  background-color: white;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-select:hover {
+  border-color: #2c5499;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #2c5499;
+  box-shadow: 0 0 0 2px rgba(44, 84, 153, 0.2);
+}
+
+/* Results Section */
+.search-results {
+  padding: 2rem 0 4rem;
+}
+
+.results-header {
+  margin-bottom: 2rem;
+}
+
+.results-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.results-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Professional Grid */
+.pro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Professional Card */
+.pro-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Filtered card animation */
+.pro-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pro Header */
+.pro-header {
+  display: flex;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pro-image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.pro-details {
+  flex-grow: 1;
+}
+
+.pro-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.pro-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pro-rating .stars {
+  color: #f59e0b;
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.pro-location {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Pro Info */
+.pro-info {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pro-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.pro-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4b5563;
+  transition: background-color 0.2s;
+}
+
+.service-tag:hover {
+  background-color: #e5e7eb;
+}
+
+/* Pro Footer */
+.pro-footer {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pro-price {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.page-current,
+.page-link,
+.page-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  margin: 0 0.25rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.page-current {
+  background-color: #2c5499;
+  color: white;
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+
+.page-link {
+  border-radius: var(--radius);
+  transition: background-color 0.2s;
+}
+
+.page-link:hover {
+  background-color: #f3f4f6;
+}
+
+.page-next {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-left: 0.5rem;
+}
+
+.page-next svg {
+  margin-left: 0.25rem;
+}
+
+/* Reset Filter Container */
+.reset-filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

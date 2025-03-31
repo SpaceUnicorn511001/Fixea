@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con nosotros | Fixea</title>
+  <meta name="description" content="Únete al equipo de Fixea. Descubre los beneficios de trabajar con nosotros y postúlate ahora.">
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles-v2.css">
+  <link rel="stylesheet" href="css/careers.css">
+  <!-- Google Fonts - Equivalente a Geist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .logo-image {
+      height: 43px;
+      width: auto;
+    }
+
+    /* Estilos para el banner flotante - Siempre visible */
+    .floating-banner {
+      background-color: #2c5499;
+      color: white;
+      padding: 12px 0; /* Vuelto a 12px */
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1100; /* Z-index mayor que el header en laptop para superposición */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .banner-content p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .banner-button {
+      background-color: white;
+      color: #2c5499;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .banner-button:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ajustes para el header - Comportamiento normal, no sticky */
+    .header {
+      position: relative; /* Posición normal en el flujo del documento */
+      background-color: white;
+      z-index: 1000; /* Z-index menor que el banner */
+      margin-top: 55px; /* Aumentado de 45px a 55px para mayor separación */
+      border-top: 4px solid #f5f5f5; /* Borde sutil en la parte superior */
+    }
+
+    /* Ajustes para el contenido principal */
+    body {
+      padding-top: 0; /* Sin padding adicional */
+    }
+
+    main {
+      padding-top: 0; /* Sin padding adicional */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .floating-banner {
+        padding: 6px 0; /* Reducido a 6px para hacerlo menos prominente */
+        height: auto;
+        z-index: 1100; /* Mantiene z-index mayor */
+      }
+
+      .header {
+        margin-top: 65px; /* Aumentado de 60px a 65px para mayor separación en móvil */
+        border-top: 3px solid #f5f5f5; /* Borde más sutil en móvil */
+      }
+
+      .banner-content {
+        flex-direction: column;
+        gap: 4px; /* Reducido a 4px */
+        padding: 4px 10px;
+      }
+
+      .banner-content p {
+        font-size: 13px; /* Reducido a 13px */
+        line-height: 1.2;
+      }
+
+      .banner-button {
+        padding: 5px 12px; /* Reducido */
+        font-size: 12px; /* Reducido a 12px */
+      }
+    }
+  </style>
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qui99kah12");
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CM8E4SN68P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CM8E4SN68P');
+  </script>
+</head>
+
+<body class="antialiased">
+  <!-- Banner flotante SIEMPRE VISIBLE (excepto en móvil) -->
+  <div class="floating-banner">
+    <div class="banner-content">
+      <p><strong>¡Oportunidad de empleo!</strong> Estamos contratando nuevos talentos para unirse a nuestro equipo</p>
+      <a href="https://forms.gle/aumzaMwruEeYAnZ36" target="_blank" class="banner-button">Postúlate ya</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="/" class="logo">
+            <img src="images/logo/fixea-logo.svg" alt="Fixea" class="logo-image">
+          </a>
+          <div class="header-nav desktop-only">
+            <a href="/pro" class="header-link">Únete como profesional</a>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropdown-button">
+              Explorar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Servicios Populares para el Hogar</a>
+              <a href="#">Limpieza y Organización</a>
+              <a href="#">Mantenimiento y Reparación</a>
+              <a href="#">Control de Plagas</a>
+              <a href="#">Adiciones e Instalaciones</a>
+              <a href="#">Remodelación</a>
+              <a href="#">Otros Servicios Populares</a>
+              <a href="#">Guías y Recursos</a>
+            </div>
+          </div>
+          <div class="desktop-only">
+            <a href="/login" class="header-link">Iniciar sesión</a>
+          </div>
+          <a href="/register" class="button primary">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="careers-hero">
+      <div class="container">
+        <div class="careers-hero-content">
+          <h1 class="careers-title">Trabaja con nosotros</h1>
+          <p class="careers-subtitle">Únete a un equipo apasionado por transformar el cuidado del hogar</p>
+          <div class="hero-cta" style="margin-top: 2rem;">
+            <a href="https://forms.gle/aumzaMwruEeYAnZ36" target="_blank" class="button" style="background-color: white; color: #2c5499; font-weight: 600; padding: 0.75rem 2rem; border-radius: 9999px; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Postúlate ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- El resto del contenido permanece igual -->
+    <!-- Beneficios Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title">Beneficios de trabajar con Fixea</h2>
+        <p class="section-description">
+          En Fixea nos preocupamos por nuestros empleados y les ofrecemos excelentes beneficios para que se sientan valorados y puedan desarrollar su potencial al máximo.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20H8M17 9l-7 7m7-7h-3.5a3.5 3.5 0 1 0 0 7h2a3.5 3.5 0 1 1 0 7H13"/><path d="M12 3v3m0 15v3"/></svg>
+            </div>
+            <h3 class="benefit-title">Compensación Competitiva</h3>
+            <p class="benefit-description">Ofrecemos salarios atractivos y bonificaciones por desempeño para recompensar tu trabajo y dedicación.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <h3 class="benefit-title">Seguro Médico Completo</h3>
+            <p class="benefit-description">Plan de salud integral para ti y tu familia, incluyendo cobertura dental y oftalmológica.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="10" r="3"></circle><path d="M12 16c-1.903.006-3.817.312-5.657.926"></path><path d="M17.657 16.926c-1.84-.614-3.754-.92-5.657-.926"></path></svg>
+            </div>
+            <h3 class="benefit-title">Equilibrio Vida-Trabajo</h3>
+            <p class="benefit-description">Horarios flexibles, trabajo remoto y política de días libres ilimitados para que puedas descansar cuando lo necesites.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 class="benefit-title">Desarrollo Profesional</h3>
+            <p class="benefit-description">Programas de capacitación continua, mentoría y oportunidades de crecimiento dentro de la empresa.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/><circle cx="17" cy="7" r="5"/></svg>
+            </div>
+            <h3 class="benefit-title">Cultura Colaborativa</h3>
+            <p class="benefit-description">Ambiente de trabajo positivo y dinámico donde tus ideas son valoradas y puedes hacer la diferencia.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <h3 class="benefit-title">Aprendizaje Continuo</h3>
+            <p class="benefit-description">Acceso a cursos, certificaciones y conferencias para mantenerte actualizado en tu campo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+      <div class="container">
+        <div class="culture-content">
+          <div class="culture-text">
+            <h2 class="section-title">Nuestra Cultura</h2>
+            <p>En Fixea creemos en crear un ambiente de trabajo donde todos puedan prosperar. Valoramos:</p>
+            <ul class="culture-values">
+              <li><strong>Innovación:</strong> Buscamos constantemente mejores formas de hacer las cosas.</li>
+              <li><strong>Colaboración:</strong> Trabajamos juntos para lograr objetivos comunes.</li>
+              <li><strong>Excelencia:</strong> Nos esforzamos por superar las expectativas en todo lo que hacemos.</li>
+              <li><strong>Inclusión:</strong> Celebramos la diversidad y creamos un entorno donde todos se sientan bienvenidos.</li>
+              <li><strong>Orientación al cliente:</strong> Nuestros usuarios son el centro de todo lo que hacemos.</li>
+            </ul>
+          </div>
+          <div class="culture-image">
+            <img src="images/misc/team-culture.jpg" alt="Equipo de Fixea colaborando" class="rounded-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="careers-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para unirte a nuestro equipo?</h2>
+          <p>Completa nuestro formulario de postulación y da el primer paso hacia tu nuevo futuro profesional con Fixea.</p>
+          <a href="https://forms.gle/aumzaMwruEeYAnZ36" target="_blank" class="button" style="background-color: white; color: #2c5499; font-weight: 600; padding: 0.75rem 2rem; border-radius: 9999px; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Postúlate ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Fixea</h3>
+          <ul class="footer-links">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contáctanos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Para clientes</h3>
+          <ul class="footer-links">
+            <li><a href="#">Cómo funciona</a></li>
+            <li><a href="#">Seguridad</a></li>
+            <li><a href="#">Reseñas</a></li>
+            <li><a href="#">Cerca de mí</a></li>
+            <li><a href="#">Centro de recursos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Para profesionales</h3>
+          <ul class="footer-links">
+            <li><a href="#">Cómo funciona</a></li>
+            <li><a href="#">Recursos para profesionales</a></li>
+            <li><a href="#">Historias de éxito</a></li>
+            <li><a href="#">App para profesionales</a></li>
+            <li><a href="#">Herramientas para profesionales</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Política de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+        <div class="copyright">
+          © 2025 Fixea, Inc.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
